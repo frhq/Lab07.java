@@ -1,0 +1,58 @@
+Task 3a
+import java.util.Scanner;
+
+public class Act3a {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a decimal value (0 to 15): ");
+        int num = input.nextInt();
+
+        String hexDigits = "0123456789ABCDEF"; // all hex symbols
+
+        if (num < 0 || num > 15) {
+            System.out.println(num + " is an invalid input");
+        } else {
+            int i = 0;
+            char hexChar = ' ';
+            while (i < hexDigits.length()) {   // loop through string
+                if (i == num) {
+                    hexChar = hexDigits.charAt(i); // pick the matching symbol
+                    break;
+                }
+                i++;
+            }
+            System.out.println("The hex value is " + hexChar);
+        }
+    }
+}
+Task 3b
+import java.util.Scanner;
+
+public class Task3b {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a hex digit: ");
+        char hex = input.next().toUpperCase().charAt(0);
+
+        int value = 0;
+        if (hex >= '0' && hex <= '9') {
+            value = hex - '0';
+        } else if (hex >= 'A' && hex <= 'F') {
+            value = 10 + (hex - 'A');
+        } else {
+            System.out.println(hex + " is an invalid input");
+            return;
+        }
+        String binary = "";
+        if (value == 0) {
+            binary = "0";
+        } else {
+            while (value > 0) {
+                int bit = value % 2;
+                binary = bit + binary;
+                value = value / 2;
+            }
+        }
+        System.out.println("The binary value is " + binary);
+    }
+}
