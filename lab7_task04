@@ -1,0 +1,6 @@
+public class Act4 {
+    public static void main(String[] args) {
+        char ch = (char)('A' + (int)(Math.random() * 26));
+        System.out.println("Random uppercase letter: " + ch);
+    }
+}
