@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class Act6 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String s = input.nextLine();
+        int space = s.indexOf(' ');
+        System.out.println(s.substring(space + 1) + " " + s.substring(0, space));
+    }
+}
